@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpfq3ubva5jkn"]
+
+[ext_resource type="Script" path="res://scripts/Roomo.gd" id="1_1nfjy"]
+[ext_resource type="Texture2D" uid="uid://d4mqtljbpov8x" path="res://sprites/roomo sprites.png" id="1_o6fqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33t1f"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6oet"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynvro"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hwke"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c76ci"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_145om"]
+atlas = ExtResource("1_o6fqa")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85ypg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33t1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6oet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynvro")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2hwke")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c76ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_145om")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(439, 396)
+scale = Vector2(2, 2)
+
+[node name="Roomo" type="Node2D" parent="."]
+position = Vector2(436, 396)
+script = ExtResource("1_1nfjy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomo"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_85ypg")
+animation = &"idle"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Roomo"]
