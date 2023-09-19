@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bibsl8up5s1rt"
+uid="uid://cgsmwm1ob7hm0"
 path="res://.godot/imported/lazy room 2 title ambience.wav-77c644a4e589152d2e8f1dd4183dc014.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

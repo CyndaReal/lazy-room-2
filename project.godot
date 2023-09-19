@@ -11,13 +11,24 @@ config_version=5
 [application]
 
 config/name="Lazy Room 2"
+config/name_localized={
+"en": "Lazy Room 2"
+}
 run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://sprites/lazy-room-splash-screen-d.png"
 config/icon="res://sprites/lazy room 2 logo.png"
 
 [dotnet]
 
 project/assembly_name="Lazy-room-2"
+
+[importer_defaults]
+
+wav={
+"edit/loop_mode": 2
+}
 
 [input]
 

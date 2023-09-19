@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpfq3ubva5jkn"]
+[gd_scene load_steps=12 format=3 uid="uid://dpfq3ubva5jkn"]
 
 [ext_resource type="Script" path="res://scripts/Roomo.gd" id="1_1nfjy"]
+[ext_resource type="Texture2D" uid="uid://cc0b61aftuwq3" path="res://sprites/map-d.png" id="1_5c1gr"]
 [ext_resource type="Texture2D" uid="uid://d4mqtljbpov8x" path="res://sprites/roomo sprites.png" id="1_o6fqa"]
+[ext_resource type="Script" path="res://scripts/camerafollow.gd" id="1_yr2qr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33t1f"]
 atlas = ExtResource("1_o6fqa")
@@ -60,17 +62,25 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(439, 396)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(984, -678)
 scale = Vector2(2, 2)
+texture = ExtResource("1_5c1gr")
 
 [node name="Roomo" type="Node2D" parent="."]
 position = Vector2(436, 396)
 script = ExtResource("1_1nfjy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomo"]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_85ypg")
 animation = &"idle"
+frame = 1
+frame_progress = 0.00810172
 
 [node name="AudioListener2D" type="AudioListener2D" parent="Roomo"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(439, 396)
+scale = Vector2(2, 2)
+script = ExtResource("1_yr2qr")
